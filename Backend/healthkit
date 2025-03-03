@@ -1,0 +1,9 @@
+healthkit/
+├── .env
+├── package.json
+├── server.js
+└── public/
+    ├── index.html
+    └── images/
+         ├── doctor.jpg
+         └── patient.jpg

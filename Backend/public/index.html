@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HealthKit</title>
+  <style>
+    /* Global Styles */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom right, #f0f8ff, #ffffff);
+      color: #333;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    /* Hide all pages by default */
+    .page {
+      display: none;
+    }
+    /* Show only the active page */
+    .active {
+      display: block;
+    }
+    /* Hero Section Styles */
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+    }
+    .hero h1 {
+      font-size: 3em;
+      color: #1e3a8a;
+    }
+    .hero p {
+      font-size: 1.2em;
+      color: #1e40af;
+      margin: 20px 0;
+    }
+    /* Global Button Styles */
+    .btn {
+      display: inline-block;
+      padding: 15px 30px;
+      margin: 10px;
+      background: #1e40af;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 50px;
+      transition: transform 0.3s, background 0.3s;
+      text-align: center;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: #1e3a8a;
+      transform: scale(1.05);
+    }
+    /* Testimonials Section Styles */
+    .testimonials {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 50px;
+    }
+    .testimonial {
+      text-align: center;
+      max-width: 300px;
+    }
+    .testimonial img {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+    }
+    .testimonial h3 {
+      margin: 10px 0;
+      color: #1e3a8a;
+    }
+    .testimonial p {
+      color: #1e40af;
+    }
+    /* Features Page Button Container */
+    .feature-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin: 50px 0;
+    }
+    /* Individual Feature Button Styles */
+    .feature-button {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      font-size: 1em;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    .feature-button:hover {
+      transform: scale(1.1);
+    }
+    /* Specific Colors for each button */
+    .btn-login {
+      background: linear-gradient(135deg, #3b82f6, #2563eb);
+    }
+    .btn-pharmacy {
+      background: linear-gradient(135deg, #10b981, #059669);
+    }
+    .btn-diet {
+      background: linear-gradient(135deg, #f97316, #ea580c);
+    }
+    /* Login Form Styles */
+    .login-form {
+      max-width: 400px;
+      margin: 50px auto;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .login-form h2 {
+      text-align: center;
+      color: #1e3a8a;
+      margin-bottom: 20px;
+    }
+    .login-form input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+    .login-form button {
+      width: 100%;
+      padding: 10px;
+      background: #1e40af;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background 0.3s;
+    }
+    .login-form button:hover {
+      background: #1e3a8a;
+    }
+  </style>
+</head>
+<body>
+  <!-- Landing Page -->
+  <div id="landing" class="page active">
+    <div class="container">
+      <!-- Hero Section -->
+      <section class="hero">
+        <h1>Welcome to HealthKit</h1>
+        <p>
+          Your comprehensive healthcare companion. Experience seamless medical care,
+          personalized diet plans, and convenient pharmacy services.
+        </p>
+        <!-- Button to navigate to Features Page -->
+        <div class="btn" onclick="showPage('features')">Get Started</div>
+      </section>
+      <!-- Testimonials Section -->
+      <section class="testimonials">
+        <!-- Doctor Testimonial -->
+        <div class="testimonial">
+          <img src="C:\Users\harsh\OneDrive\Desktop\REAct\doctor.jpg" alt="Doctor" />
+          <h3>Dr. Sarah Johnson</h3>
+          <p>"Providing care with compassion and expertise."</p>
+        </div>
+        <!-- Happy Customer Testimonial -->
+        <div class="testimonial">
+          <img src="C:\Users\harsh\OneDrive\Desktop\REAct\patient.jpg" alt="Happy Customer" />
+          <h3>John Doe</h3>
+          <p>"HealthKit transformed my healthcare experience."</p>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Features Page -->
+  <div id="features" class="page">
+    <div class="container">
+      <!-- Header Section -->
+      <section class="hero">
+        <h1>Your Health Journey Starts Here</h1>
+        <p>
+          Access world-class healthcare services with just a touch. Choose your path to
+          better health and wellness.
+        </p>
+      </section>
+      <!-- Service Buttons Section -->
+      <section class="feature-buttons">
+        <!-- Login Button -->
+        <div class="feature-button btn-login" onclick="showPage('login')">
+          <div>Login</div>
+          <div style="font-size: 0.8em;">Secure Access</div>
+        </div>
+        <!-- Pharmacy Button -->
+        <div class="feature-button btn-pharmacy" onclick="alert('Pharmacy feature coming soon!')">
+          <div>Pharmacy</div>
+          <div style="font-size: 0.8em;">Coming Soon</div>
+        </div>
+        <!-- Diet Planner Button -->
+        <div class="feature-button btn-diet" onclick="alert('Diet Planner feature coming soon!')">
+          <div>Diet Planner</div>
+          <div style="font-size: 0.8em;">Coming Soon</div>
+        </div>
+      </section>
+      <!-- Footer Navigation -->
+      <section style="text-align: center;">
+        <div class="btn" onclick="showPage('landing')">Back to Home</div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Login Page -->
+  <div id="login" class="page">
+    <div class="container">
+      <div class="login-form">
+        <h2>Login to Your Account</h2>
+        <!-- Username Input -->
+        <input type="text" id="username" placeholder="Username" />
+        <!-- Password Input -->
+        <input type="password" id="password" placeholder="Password" />
+        <!-- Login Button -->
+        <button onclick="alert('Login functionality coming soon!')">Login</button>
+        <!-- Back Button -->
+        <button style="background: #ccc; margin-top: 10px;" onclick="showPage('features')">
+          Back
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript for Page Navigation -->
+  <script>
+    // Function to show a specific page and hide the others
+    function showPage(pageId) {
+      // Select all elements with the class "page"
+      const pages = document.querySelectorAll('.page');
+      // Hide all pages
+      pages.forEach(page => page.classList.remove('active'));
+      // Show the selected page
+      document.getElementById(pageId).classList.add('active');
+    }
+  </script>
+</body>
+</html>
